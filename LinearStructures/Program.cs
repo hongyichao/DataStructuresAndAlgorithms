@@ -1,0 +1,4 @@
+﻿
+using LinearStructures;
+
+ArrayDemo.Run();
