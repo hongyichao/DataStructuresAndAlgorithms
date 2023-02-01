@@ -1,4 +1,9 @@
 ﻿
 using LinearStructures;
 
-ArrayDemo.Run();
+//ArrayDemo.Run();
+
+//LinkedListDemo.Run();
+
+//StackDemo.Run();
+QueuesDemo.Run();
