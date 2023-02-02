@@ -125,6 +125,28 @@ namespace LinearStructures
             priorityQueue.Enqueue(7);
             priorityQueue.Enqueue(1);
             Console.WriteLine(priorityQueue.ToString());
+
+            Console.WriteLine("------- Linked List Queue Demo");
+
+            LinkedListQueue linkedListQueue = new LinkedListQueue();
+
+            linkedListQueue.Enqueue(1);
+            linkedListQueue.Enqueue(2);
+            linkedListQueue.Enqueue(3);
+            linkedListQueue.Enqueue(4);
+            linkedListQueue.Enqueue(5);
+            linkedListQueue.Enqueue(6);
+            Console.WriteLine(linkedListQueue.ToString());
+
+            Console.WriteLine(linkedListQueue.Dequeue());
+            Console.WriteLine(linkedListQueue.Dequeue());
+            Console.WriteLine(linkedListQueue.Dequeue());
+            Console.WriteLine(linkedListQueue.ToString());
+
+            linkedListQueue.Enqueue(7);
+            linkedListQueue.Enqueue(8);
+
+            Console.WriteLine(linkedListQueue.ToString());
         }
     }
 }
