@@ -6,4 +6,6 @@ using LinearStructures;
 //LinkedListDemo.Run();
 
 //StackDemo.Run();
-QueuesDemo.Run();
+//QueuesDemo.Run();
+
+HashTableDemo.Run();
