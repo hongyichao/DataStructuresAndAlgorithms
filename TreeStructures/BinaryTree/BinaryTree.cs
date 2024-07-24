@@ -78,6 +78,39 @@ namespace TreeStructures.BinaryTree
             Console.WriteLine(current.Value);
         }
 
+
+        public int Min() 
+        {
+            return Min(root);
+        }
+
+        private int Min(Node current) 
+        {
+            if (current == null) 
+                return -1;
+
+            if (current.LeftChild != null)
+                return Min(current.LeftChild);
+
+            return current.Value;
+        }
+
+        public int Height() 
+        {
+            return Height(root);
+        }
+
+        private int Height(Node current) 
+        {
+            if(current == null)
+                return -1;
+
+            if (current.LeftChild == null && current.RightChild == null)
+                return 0;
+
+            return 1 + Math.Max(Height(current.LeftChild), Height(current.RightChild));
+        }
+
         public bool Find(int value) 
         {
             var current = root;

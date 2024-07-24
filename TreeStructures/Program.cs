@@ -12,6 +12,9 @@ binaryTree.Insert(75);
 binaryTree.Insert(110);
 binaryTree.Insert(105);
 binaryTree.Insert(120);
+binaryTree.Insert(5);
+
+
 
 var searchResult = binaryTree.Find(75);
 Console.WriteLine(searchResult);
@@ -38,5 +41,12 @@ Console.WriteLine();
 Console.WriteLine("PrintByPostOrderTraverse");
 binaryTree.PrintByPostOrderTraverse();
 
+Console.WriteLine();
+Console.WriteLine("Height of the root:" + Convert.ToString(binaryTree.Height()));
+
+
+
+Console.WriteLine();
+Console.WriteLine("Min of the root:" + Convert.ToString(binaryTree.Min()));
 
 Console.WriteLine("done");
