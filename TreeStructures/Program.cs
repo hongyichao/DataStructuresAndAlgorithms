@@ -75,6 +75,10 @@ Console.WriteLine("Is binary tree valid? " + binaryTree.Validate());
 otherTree.Insert(130);
 Console.WriteLine("Node at distance: " + String.Join(", ", otherTree.GetNodeAtGivenDistance(3)));
 
+Console.WriteLine("-------------------");
+binaryTree.PrintByLevelOrderTraverse();
+Console.WriteLine("-------------------");
+otherTree.PrintByLevelOrderTraverse();
 
 Console.WriteLine("done");
 

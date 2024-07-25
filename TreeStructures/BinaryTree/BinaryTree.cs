@@ -11,6 +11,20 @@ namespace TreeStructures.BinaryTree
     {
         private Node root;
 
+        public void PrintByLevelOrderTraverse() 
+        {
+            for (int i = 0; i < Height(); i++) 
+            {
+                var list = GetNodeAtGivenDistance(i);
+
+                foreach (var v in list) 
+                {
+                    Console.WriteLine(v);
+                }
+            }
+        }
+
+
         public void PrintByPreOrderTraverse() 
         {
             //root, left, right
@@ -173,6 +187,8 @@ namespace TreeStructures.BinaryTree
 
             return nodeValueList;
         }
+
+
 
         private void GetNodeAtGivenDistance(Node current, int distance, List<int> nodeValueList) 
         {
