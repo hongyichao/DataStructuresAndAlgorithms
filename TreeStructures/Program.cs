@@ -80,5 +80,30 @@ binaryTree.PrintByLevelOrderTraverse();
 Console.WriteLine("-------------------");
 otherTree.PrintByLevelOrderTraverse();
 
+
+Console.WriteLine("-------------------");
+Console.WriteLine("Binary tree sizen: "+ binaryTree.Size());
+
+Console.WriteLine("-------------------");
+Console.WriteLine("Number of Leaves: " + binaryTree.CountLeaves());
+
+Console.WriteLine("-------------------");
+Console.WriteLine("Max in the tree: " + otherTree.Max());
+
+
+Console.WriteLine("-------------------");
+Console.WriteLine("The tree contains: " + otherTree.Contains(130));
+Console.WriteLine("The tree contains: " + otherTree.Contains(13));
+
+Console.WriteLine("-------------------");
+Console.WriteLine("Are the 2 vals sibling:: " + otherTree.AreSibling(90,110));
+Console.WriteLine("Are the 2 vals sibling:: " + otherTree.AreSibling(80, 90));
+
+Console.WriteLine("-------------------");
+Console.WriteLine("Ancestors:: " + String.Join(", ", otherTree.GetAncestors(5)));
+Console.WriteLine("Ancestors:: " + String.Join(", ", otherTree.GetAncestors(100)));
+Console.WriteLine("Ancestors:: " + String.Join(", ", otherTree.GetAncestors(500)));
+Console.WriteLine("Ancestors:: " + String.Join(", ", otherTree.GetAncestors(90)));
+
 Console.WriteLine("done");
 
