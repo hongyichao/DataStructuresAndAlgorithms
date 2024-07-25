@@ -111,6 +111,96 @@ namespace TreeStructures.BinaryTree
             return 1 + Math.Max(Height(current.LeftChild), Height(current.RightChild));
         }
 
+        public bool Equal(BinaryTree other) 
+        {
+            if(other  == null)
+                return false;
+
+            return Equal(this.root, other.root);
+        }
+
+        private bool Equal(Node first, Node second) 
+        {
+            if (first == null && second == null) 
+                return true;
+
+            if(first!=null && second !=null)
+                return first.Value == second.Value
+                && Equal(first.LeftChild, second.LeftChild)
+                && Equal(first.RightChild, second.RightChild);
+
+            return false;
+
+        }
+
+        public void SwapRoot() 
+        {
+            if (root != null) 
+            {
+                var tmp = root.LeftChild;
+                root.LeftChild = root.RightChild; 
+                root.RightChild = tmp;
+            }
+        }
+
+        public bool Validate() 
+        {
+            return Validate(root, int.MinValue, int.MaxValue);
+        }
+
+        private bool Validate(Node current, int from, int to) 
+        {
+            if (current == null)
+                return true;
+
+            if (IsLeafNode(current))
+            {
+                if((current.Value >= from) && (current.Value< to))
+                    return true;
+
+                return false;
+            }
+
+            return Validate(current.LeftChild, from, current.Value) && Validate(current.RightChild, current.Value, to);
+
+        }
+
+        public List<int> GetNodeAtGivenDistance(int distance) 
+        {
+            var  nodeValueList = new List<int>();
+
+            GetNodeAtGivenDistance(root, distance, nodeValueList);
+
+            return nodeValueList;
+        }
+
+        private void GetNodeAtGivenDistance(Node current, int distance, List<int> nodeValueList) 
+        {
+            if (current == null) 
+            {   
+                return;
+            }
+
+            if (distance == 0)
+            {
+                nodeValueList.Add(current.Value);
+                return;
+            }
+
+            distance--;
+
+            GetNodeAtGivenDistance(current.LeftChild, distance, nodeValueList);
+            GetNodeAtGivenDistance(current.RightChild, distance, nodeValueList);
+        }
+
+        
+
+
+        public bool IsLeafNode(Node current) 
+        {
+            return current.LeftChild == null && current.RightChild == null;
+        }
+
         public bool Find(int value) 
         {
             var current = root;
