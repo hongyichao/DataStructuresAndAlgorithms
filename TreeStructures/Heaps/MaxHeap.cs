@@ -19,6 +19,7 @@ namespace TreeStructures.Heaps
                 Heapify(array, i);
             }
         }
+
         private static void Heapify(int[] array, int index) 
         {
             var maxIndex = index;
@@ -37,6 +38,33 @@ namespace TreeStructures.Heaps
             Swap(array, index, maxIndex);
 
             Heapify(array, maxIndex);
+        }
+
+        public static bool IsMaxHeap(int[] array)
+        {
+            return IsMaxHeap(array, 0);
+        }
+
+        private static bool IsMaxHeap(int[] array, int index) 
+        {
+            var lastParentIndex = (array.Length - 2) / 2;
+            if(index>lastParentIndex)
+                return true;
+
+            var maxIndex = index;
+
+            var leftChildIndex = index * 2 + 1;
+            var rightChildIndex = index * 2 + 2;
+
+
+            var isValidParent = true;
+            if (leftChildIndex < array.Length)
+                isValidParent = array[index] >= array[leftChildIndex]; 
+                
+            if(rightChildIndex < array.Length)
+                isValidParent = array[index] >= array[rightChildIndex];
+
+            return isValidParent && IsMaxHeap(array, leftChildIndex) && IsMaxHeap(array, rightChildIndex);
         }
 
         private static void Swap(int[] array, int firstIndex, int secondIndex) 

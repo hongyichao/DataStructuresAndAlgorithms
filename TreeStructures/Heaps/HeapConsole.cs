@@ -55,7 +55,8 @@ namespace TreeStructures.Heaps
             Console.WriteLine("The Kth largest item: " + MaxHeap.GetKthLargestItem(numbers, 2));
             Console.WriteLine("The Kth largest item: " + MaxHeap.GetKthLargestItem(numbers, 6));
 
-
+            Console.WriteLine("Is max heap: " + MaxHeap.IsMaxHeap(numbers));
+            Console.WriteLine("Is max heap: " + MaxHeap.IsMaxHeap(new int[] {10,20,30,15}));
 
             Console.WriteLine("done");
         }
