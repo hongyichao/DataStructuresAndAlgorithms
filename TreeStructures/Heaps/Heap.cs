@@ -35,6 +35,14 @@ namespace TreeStructures.Heaps
             return root;
         }
 
+        public int GetMaxItem() 
+        {
+            if (IsEmpty())
+                throw new IndexOutOfRangeException();
+
+            return Nodes[0];
+        }
+
         public bool IsEmpty() 
         {
             return Nodes.Length == 0;

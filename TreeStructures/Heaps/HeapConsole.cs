@@ -43,6 +43,20 @@ namespace TreeStructures.Heaps
 
             Console.WriteLine(String.Join(", ", numbers));
 
+
+            numbers = new int[] { 15, 3, 10, 7, 28, 20 };
+            MaxHeap.Heapify(numbers);
+
+            Console.WriteLine(String.Join(", ", numbers));
+
+
+            
+            Console.WriteLine("The Kth largest item: " + MaxHeap.GetKthLargestItem(numbers, 1));
+            Console.WriteLine("The Kth largest item: " + MaxHeap.GetKthLargestItem(numbers, 2));
+            Console.WriteLine("The Kth largest item: " + MaxHeap.GetKthLargestItem(numbers, 6));
+
+
+
             Console.WriteLine("done");
         }
     }

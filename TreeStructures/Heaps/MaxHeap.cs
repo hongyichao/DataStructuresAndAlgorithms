@@ -45,5 +45,21 @@ namespace TreeStructures.Heaps
             array[firstIndex] = array[secondIndex];
             array[secondIndex] = tmp;
         }
+
+        public static int GetKthLargestItem(int[] array, int k) 
+        {
+            if (k < 1 || k > array.Length)
+                throw new IndexOutOfRangeException();
+
+            var heap = new Heap(array.Length);
+
+            foreach (var n in array) 
+                heap.Insert(n);
+
+            for (int i =0; i < k - 1; i++) 
+                heap.Remove();
+
+            return heap.GetMaxItem();
+        }
     }
 }
