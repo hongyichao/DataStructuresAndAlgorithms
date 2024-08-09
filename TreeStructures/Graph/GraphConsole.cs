@@ -21,7 +21,6 @@ namespace TreeStructures.Graph
             graph.AddNode("F");
                 
             graph.AddEdge("A", "B");
-
             graph.AddEdge("A", "C");
             graph.AddEdge("B", "D");
             graph.AddEdge("C", "E");
@@ -37,6 +36,36 @@ namespace TreeStructures.Graph
 
             graph.Print();
 
+            Console.WriteLine("-----------------------------------");
+            graph.AddNode("C");
+            graph.AddEdge("A", "B");
+
+            graph.AddEdge("A", "C");
+
+
+            graph.Print();
+            graph.TraverseDepthFirst("A");
+            graph.IterativeTraverseDepthFirst("A");
+
+            graph.AddEdge("D", "E");
+            graph.AddEdge("D", "F");
+
+            graph.TraverseBreadthFirst("A");
+
+
+            Console.WriteLine("-----------------------------------");
+
+            var strList = graph.TopologicalSort();
+
+            Console.WriteLine(string.Join(", ", strList));
+
+            Console.WriteLine("-----------------------------------");
+
+            Console.WriteLine("has cycle: " + graph.HasCycle());
+
+            graph.AddEdge("C", "A");
+
+            Console.WriteLine("has cycle: " + graph.HasCycle());
 
         }
     }
