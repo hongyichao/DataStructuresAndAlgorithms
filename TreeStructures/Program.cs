@@ -5,6 +5,7 @@ using TreeStructures.BinaryTree;
 using TreeStructures.Graph;
 using TreeStructures.Heaps;
 using TreeStructures.Trie;
+using TreeStructures.WeightedGraph;
 
 var binaryTreeConsole = new BinaryTreeConsole();
 //binaryTreeConsole.Run();
@@ -18,8 +19,12 @@ var binaryTreeConsole = new BinaryTreeConsole();
 //var trieConsole = new TrieConsole();
 //trieConsole.Run();
 
-var graphConsole = new GraphConsole();
-graphConsole.Run();
+//var graphConsole = new GraphConsole();
+//graphConsole.Run();
+
+var weightedGraphConsole = new WeightedGraphConsole();
+weightedGraphConsole.Run();
+
 
 
 
