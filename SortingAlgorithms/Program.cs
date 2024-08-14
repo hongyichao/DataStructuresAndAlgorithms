@@ -16,3 +16,13 @@ items = new int[] { 3, 4, 5, 6, 7 };
 bubbleSort.Sort(items);
 
 Console.WriteLine(string.Join(", ", items));
+
+
+
+items = new int[] { 5, 4, 3, 2, 1 };
+
+SelectionSort selectionSort = new SelectionSort();
+
+var result = selectionSort.Sort(items);
+
+Console.WriteLine(string.Join(", ", result));
