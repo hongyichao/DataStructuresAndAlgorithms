@@ -24,6 +24,7 @@ namespace TreeStructures.WeightedGraph
 
             weightedGraph.Print();
 
+            Console.WriteLine("--------Graph 2---------Start---------------");
             var weightedGraph2 = new WeightedGraph();
 
             weightedGraph2.AddNode("A");
@@ -32,12 +33,15 @@ namespace TreeStructures.WeightedGraph
             
             weightedGraph2.AddEdge("A", "B", 1);
             weightedGraph2.AddEdge("B", "C", 2);
-            weightedGraph2.AddEdge("A", "C", 10);
+            
 
             var path = weightedGraph2.GetShortestPath("A", "C");
-
             Console.WriteLine("The shortest path: " + path);
 
+            
+            weightedGraph2.Print();
+
+            Console.WriteLine("--------Graph 2---------End---------------");
             var weightedGraph3 = new WeightedGraph();
 
             weightedGraph3.AddNode("A");
@@ -57,6 +61,15 @@ namespace TreeStructures.WeightedGraph
             path = weightedGraph3.GetShortestPath("A", "D");
 
             Console.WriteLine("The shortest path: " + path);
+
+            Console.WriteLine("----------------------------------");
+            weightedGraph3.Print();
+
+            Console.WriteLine("Graph 3 Has cycle: " + weightedGraph3.HasCycle());
+
+            Console.WriteLine("Graph 2 Has cycle: " + weightedGraph2.HasCycle());
+
+            Console.WriteLine("Graph 1 Has cycle: " + weightedGraph.HasCycle());
 
         }
     }

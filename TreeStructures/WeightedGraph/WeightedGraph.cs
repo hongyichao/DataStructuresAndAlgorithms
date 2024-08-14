@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Net.NetworkInformation;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Xml.Linq;
@@ -120,6 +121,37 @@ namespace TreeStructures.WeightedGraph
 
             return string.Join("-> ", path);
 
+        }
+
+        public bool HasCycle() 
+        {
+            var visited = new HashSet<Node>();
+
+            foreach (var node in Nodes.Values) 
+            {
+                if (!visited.Contains(node)
+                    && HasCycle(node, null, visited))                    
+                    return true;
+            }
+
+            return false;
+        }
+
+        private bool HasCycle(Node node, Node previous, HashSet<Node> visited) 
+        {
+            visited.Add(node);
+                        
+            foreach (var edge in node.GetEdges())
+            {
+                if (edge.To == previous)
+                    continue;
+
+                if(visited.Contains(edge.To) || 
+                    HasCycle(edge.To, node, visited))
+                    return true;
+            }
+
+            return false;
         }
 
 
