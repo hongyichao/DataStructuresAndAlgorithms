@@ -154,6 +154,60 @@ namespace TreeStructures.WeightedGraph
             return false;
         }
 
+        public WeightedGraph GetMinimumSpanningTree() 
+        {
+            var graphToReturn = new WeightedGraph();
+
+            var visited= new HashSet<Node>();
+
+            if (Nodes.Values.Count == 0)
+                return graphToReturn;
+
+            foreach (var node in Nodes.Values) 
+            {
+                if (!visited.Contains(node))
+                    GetMinimumSpanningTree(node, visited);
+            }
+
+            string previous = string.Empty;
+            foreach (var n in visited) 
+            {
+                graphToReturn.AddNode(n.Name);
+
+                if (!string.IsNullOrEmpty(previous)) 
+                {
+
+                    var edge = n.GetEdges().FirstOrDefault(n => n.To.Name == previous);
+
+                    if(edge!=null)
+                        graphToReturn.AddEdge(edge.From.Name, edge.To.Name, edge.Weight);
+                }
+                previous = n.Name;
+            }
+
+            return graphToReturn;
+        }
+
+        private void GetMinimumSpanningTree(Node node, HashSet<Node> visited) 
+        {
+            visited.Add(node);
+
+            var queue = new PriorityQueue<Node, int>();
+
+            foreach (var edge in node.GetEdges())
+            {
+                if (visited.Contains(edge.To))
+                    continue;
+
+                queue.Enqueue(edge.To, edge.Weight);
+            }
+
+            if (queue.Count > 0) 
+            {
+                var nextNode = queue.Dequeue();
+                GetMinimumSpanningTree(nextNode, visited);
+            }            
+        }
 
         private class Edge 
         {
@@ -176,11 +230,11 @@ namespace TreeStructures.WeightedGraph
 
         private class Node 
         {
-            private string _name;
+            public string Name;
             private List<Edge> _edges = new List<Edge>();
             public Node(string name) 
             { 
-                _name = name;
+                Name = name;
             }
 
             public void AddEdge(Node to, int weight)
@@ -195,7 +249,7 @@ namespace TreeStructures.WeightedGraph
 
             public override string ToString() 
             {
-                return _name;
+                return Name;
             }
         }
 

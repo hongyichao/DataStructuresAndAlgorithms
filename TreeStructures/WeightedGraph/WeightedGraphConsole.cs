@@ -42,6 +42,9 @@ namespace TreeStructures.WeightedGraph
             weightedGraph2.Print();
 
             Console.WriteLine("--------Graph 2---------End---------------");
+
+
+            Console.WriteLine("--------Graph 3---------Start-----");
             var weightedGraph3 = new WeightedGraph();
 
             weightedGraph3.AddNode("A");
@@ -67,9 +70,34 @@ namespace TreeStructures.WeightedGraph
 
             Console.WriteLine("Graph 3 Has cycle: " + weightedGraph3.HasCycle());
 
+            Console.WriteLine("--------Graph 3---------End-----");
+
             Console.WriteLine("Graph 2 Has cycle: " + weightedGraph2.HasCycle());
 
             Console.WriteLine("Graph 1 Has cycle: " + weightedGraph.HasCycle());
+
+            Console.WriteLine("--------Graph 4---------Start-----");
+
+            var weightedGraph4 = new WeightedGraph();
+
+            weightedGraph4.AddNode("A");
+            weightedGraph4.AddNode("B");
+            weightedGraph4.AddNode("C");
+            weightedGraph4.AddNode("D");
+            
+
+            weightedGraph4.AddEdge("A", "B", 3);
+            weightedGraph4.AddEdge("B", "D", 4);
+            weightedGraph4.AddEdge("C", "D", 5);
+            weightedGraph4.AddEdge("A", "C", 1);
+            weightedGraph4.AddEdge("B", "C", 2);
+
+
+            var spanningTree = weightedGraph4.GetMinimumSpanningTree();
+
+
+            Console.WriteLine("-----------Spanning tree-------------");
+            spanningTree.Print();
 
         }
     }
