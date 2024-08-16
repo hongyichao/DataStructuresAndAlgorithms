@@ -41,3 +41,13 @@ Console.WriteLine(string.Join(", ", result2));
 items = new int[] { 7, 5};
 result2 = insertionSort.Sort(items);
 Console.WriteLine(string.Join(", ", result2));
+
+MergeSort mergeSort = new MergeSort();
+items = new int[] { 5, 4, 3, 2, 1 };
+mergeSort.Sort(items);
+Console.WriteLine(string.Join(", ", items));
+
+QuickSort quickSort = new QuickSort();
+items = new int[] { 7, 4, 1, 2, 5 };
+quickSort.Sort(items);
+Console.WriteLine(string.Join(", ", items));
