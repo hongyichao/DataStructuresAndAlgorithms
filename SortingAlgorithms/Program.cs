@@ -51,3 +51,8 @@ QuickSort quickSort = new QuickSort();
 items = new int[] { 7, 4, 1, 2, 5 };
 quickSort.Sort(items);
 Console.WriteLine(string.Join(", ", items));
+
+CountingSort countingSort = new CountingSort();
+items = new int[] { 7, 4, 1, 2, 5 };
+countingSort.Sort(items, 7);
+Console.WriteLine(string.Join(", ", items));
