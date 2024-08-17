@@ -7,7 +7,11 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LinearStructures", "LinearS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "TreeStructures", "TreeStructures\TreeStructures.csproj", "{56A70EF1-6277-4030-B675-452947449A7C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SortingAlgorithms", "SortingAlgorithms\SortingAlgorithms.csproj", "{86998AC5-9CDA-4E30-BE05-5EA41E0D9E28}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "SortingAlgorithms", "SortingAlgorithms\SortingAlgorithms.csproj", "{86998AC5-9CDA-4E30-BE05-5EA41E0D9E28}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "DataStructures", "DataStructures", "{08B3C25A-D7EC-472F-8E2B-52C4C4BBD310}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Algorithms", "Algorithms", "{BD8E8559-C726-4280-8ADD-EA3F5F16B5A5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -30,6 +34,11 @@ Global
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76795DB1-8AA8-4E6E-8783-47E47127CCBE} = {08B3C25A-D7EC-472F-8E2B-52C4C4BBD310}
+		{56A70EF1-6277-4030-B675-452947449A7C} = {08B3C25A-D7EC-472F-8E2B-52C4C4BBD310}
+		{86998AC5-9CDA-4E30-BE05-5EA41E0D9E28} = {BD8E8559-C726-4280-8ADD-EA3F5F16B5A5}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {E6BBA309-C352-4623-98B1-4B7AE4B300D8}

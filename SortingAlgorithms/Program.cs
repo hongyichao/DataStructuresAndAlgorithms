@@ -56,3 +56,9 @@ CountingSort countingSort = new CountingSort();
 items = new int[] { 7, 4, 1, 2, 5 };
 countingSort.Sort(items, 7);
 Console.WriteLine(string.Join(", ", items));
+
+
+BucketSort bucketSort = new BucketSort();
+items = new int[] { 7, 4, 1, 2, 5 };
+bucketSort.Sort(items, 3);
+Console.WriteLine(string.Join(", ", items));
