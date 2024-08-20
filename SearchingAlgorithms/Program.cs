@@ -20,3 +20,9 @@ Console.WriteLine("found item at: " + index);
 
 index = search.TernarySearch(items, 11);
 Console.WriteLine("found item at: " + index);
+
+index = search.JumpSearch(items, 11);
+Console.WriteLine("found item at: " + index);
+
+index = search.ExponentialSearch(items, 11);
+Console.WriteLine("found item at: " + index);

@@ -115,5 +115,19 @@ namespace SearchingAlgorithms
 
             return -1;
         }
+
+        public int ExponentialSearch(int[] array, int target) 
+        {
+            int bound = 1;
+            int previousBound = 1;
+
+            while (bound < array.Length && target > array[bound]) 
+                bound *= 2;
+
+            int left = bound / 2;
+            int right = Math.Min(bound, array.Length - 1);
+
+            return BinarySearchRec(array, target, left, right);
+        }
     }
 }
