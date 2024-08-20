@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Numerics;
+using System.Security.AccessControl;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -61,6 +62,35 @@ namespace SearchingAlgorithms
             }
 
             return -1;
+        }
+
+        public int TernarySearch(int[] array, int target) 
+        {
+            return TernarySearch(array, target, 0, array.Length - 1);
+        }
+
+        private int TernarySearch(int[] array, int target, int left, int right) 
+        {
+            if(left>right)
+                return -1;
+
+            var partitionSize = array.Length / 3;
+            var mid1 = left + partitionSize; 
+            var mid2 = right - partitionSize;
+
+            if(target == array[mid1])
+                return mid1;
+
+            if (target < array[mid1])
+                return TernarySearch(array, target, left, mid1 - 1);
+
+            if(target == array[mid2])
+                return mid2;
+
+            if (target > array[mid2])
+                return TernarySearch(array, target, mid2+1, right);
+
+            return TernarySearch(array, target, mid1 + 1, mid2 - 1);
         }
     }
 }

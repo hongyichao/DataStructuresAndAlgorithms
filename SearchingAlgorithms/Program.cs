@@ -17,3 +17,6 @@ Console.WriteLine("found item at: " + index);
 
 index = search.BinarySearchRec(items, 11);
 Console.WriteLine("found item at: " + index);
+
+index = search.TernarySearch(items, 11);
+Console.WriteLine("found item at: " + index);
