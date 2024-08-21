@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
+using System.Reflection.Metadata.Ecma335;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -116,6 +118,69 @@ namespace StringManipulation
             }
 
             return string.Join(" ", strings);
+        }
+
+        public bool AreAnagrams(string str1, string str2) 
+        {
+            if(str1==null || str2==null)
+                return false;
+                        
+            var array1 = str1.ToLower().ToArray();
+            Array.Sort(array1);
+
+            var array2 = str2.ToLower().ToArray();
+            Array.Sort(array2);
+
+            return string.Join("",array1) == string.Join("", array2);
+        }
+        public bool AreAnagrams2(string str1, string str2)
+        {
+            if (str1 == null || str2 == null)
+                return false;
+
+            if(str1.Length!=str2.Length)
+                return false;
+
+            foreach (var s in str1) 
+            {
+                if(!str2.Contains(s))
+                    return false;
+            }
+
+            return true;
+        }
+
+        public bool IsPalindrome(string str) 
+        {
+            if(string.IsNullOrEmpty(str))
+                return false;
+
+            var stack = new Stack<char>();
+
+            foreach(var s in str)
+                stack.Push(s);
+
+            var str2 = string.Join("", stack);
+
+            if(str == str2)
+                return true;
+
+            return false;
+        }
+
+        public bool IsPalindrome2(string str)
+        {
+            if (string.IsNullOrEmpty(str))
+                return false;
+
+            var left = 0;
+            int right = str.Length-1;
+
+            while(left < right)
+                if (str[left++] != str[right--])
+                    return false;
+
+            return true;
         }
     }
 }
